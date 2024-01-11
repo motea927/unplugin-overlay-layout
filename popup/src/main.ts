@@ -3,6 +3,8 @@ import type { Component } from 'vue'
 
 import App from './App.vue'
 
+import './index.css'
+
 function createDevToolsContainer(App: Component) {
   const CONTAINER_ID = '__vue-overlay-layout__'
   const el = document.createElement('div')

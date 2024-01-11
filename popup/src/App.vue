@@ -1,48 +1,39 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      gg
-      <HelloWorld msg="You did it!" />
+  <main class="fixed right-0 top-1/2 transform -translate-y-1/2 z-[999]">
+    <div class="flex flex-col p-2 divide-y shadow-xl rounded-xl">
+      <Component
+        v-for="icon in icons"
+        :is="icon"
+        class="p-2"
+        :is-open="state.isOpen"
+        @click-eye="state.isOpen = !state.isOpen"
+      />
     </div>
-  </header>
 
-  <main>
-    <TheWelcome />
+    <Teleport to="body">
+      <LayoutPreview v-if="state.isOpen" class="fixed inset-0 z-[990]" />
+    </Teleport>
   </main>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script setup lang="ts">
+import { useStorage } from '@vueuse/core'
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+import IconEye from '@/components/icons/IconEye.vue'
+import IconSetting from '@/components/icons/IconSetting.vue'
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
+import LayoutPreview from '@/components/LayoutPreview.vue'
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
+const icons = [IconEye, IconSetting]
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+const state = useStorage(
+  'unplugin-overlay-layout',
+  {
+    isOpen: true,
+    layoutPreview: {
+      style: ''
+    }
+  },
+  sessionStorage
+)
+</script>
