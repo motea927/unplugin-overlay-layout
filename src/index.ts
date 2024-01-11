@@ -18,7 +18,7 @@ export const unpluginFactory: UnpluginFactory<
     const DIR_CLIENT = resolve(DIR_DIST, './overlay-layout/')
 
     server.middlewares.use(
-      `/api`,
+      `/__OVERLAY_LAYOUT__`,
       sirv(DIR_CLIENT, {
         single: true,
         dev: true
@@ -40,7 +40,15 @@ export const unpluginFactory: UnpluginFactory<
           injectTo: 'head',
           attrs: {
             type: 'module',
-            src: '/api/overlay-layout.js'
+            src: '/__OVERLAY_LAYOUT__/overlay-layout.js'
+          }
+        },
+        {
+          tag: 'link',
+          injectTo: 'head',
+          attrs: {
+            rel: 'stylesheet',
+            href: '/__OVERLAY_LAYOUT__/overlay-layout.css'
           }
         }
       ]
