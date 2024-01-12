@@ -5,13 +5,13 @@
   "packageManager": "pnpm@8.6.12",
   "description": "",
   "license": "MIT",
-  "homepage": "https://github.com/antfu/unplugin-overlay-layout#readme",
+  "homepage": "https://github.com/motea927/unplugin-overlay-layout",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antfu/unplugin-overlay-layout.git"
+    "url": "git+https://github.com/motea927/unplugin-overlay-layout.git"
   },
   "bugs": {
-    "url": "https://github.com/antfu/unplugin-overlay-layout/issues"
+    "url": "https://github.com/motea927/unplugin-overlay-layout/issues"
   },
   "keywords": [
     "unplugin",
