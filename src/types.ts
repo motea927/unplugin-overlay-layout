@@ -3,5 +3,7 @@ export interface Options {
   // define your plugin options here
   layoutPreview?: {
     style?: string | StyleValue
+    imageUrl?: string
+    opacity?: number
   }
 }

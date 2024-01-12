@@ -1,13 +1,16 @@
 <template>
-  <button @click="$emit('clickEye')">
+  <IconContainer @click="emit('clickEye')">
     <Icon :icon="props.isOpen ? 'iconamoon:eye-off' : 'iconamoon:eye'" />
-  </button>
+  </IconContainer>
 </template>
 
 <script setup lang="ts">
+import IconContainer from '@/components/icons/IconContainer.vue'
 import { Icon } from '@iconify/vue'
 
 const props = defineProps<{ isOpen: boolean }>()
-</script>
 
-<style scoped></style>
+const emit = defineEmits<{
+  (e: 'clickEye'): void
+}>()
+</script>

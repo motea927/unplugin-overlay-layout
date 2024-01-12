@@ -11,14 +11,11 @@ export default defineConfig({
         style: {
           position: 'absolute',
           margin: 'auto',
-          top: '0',
-          right: '0',
-          bottom: '0',
-          left: '0',
+          inset: '0',
           width: '13.34rem',
-          height: '7.5rem',
-          backgroundImage: 'url(https://picsum.photos/200/300)'
-        }
+          height: '7.5rem'
+        },
+        imageUrl: 'https://picsum.photos/200/300'
       }
     })
     // VueDevTools()

@@ -29,14 +29,12 @@ export const unpluginFactory: UnpluginFactory<
       )
     },
     transformIndexHtml(html: string) {
-      console.log(html)
       const injectInlineScript = html.replace(
         '</head>',
         `
           <script type="text/javascript">
-            window._unpluginOverlayLayout = {}
-            window._unpluginOverlayLayout = ${JSON.stringify(options)}
-            console.log(window._unpluginOverlayLayout)
+            window._unpluginOverlayLayout = {};
+            window._unpluginOverlayLayout = ${JSON.stringify(options)};
           </script>
         </head>
         `
