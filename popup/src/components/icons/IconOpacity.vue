@@ -15,7 +15,7 @@ import { computed } from 'vue'
 import IconContainer from '@/components/icons/IconContainer.vue'
 import { Icon } from '@iconify/vue'
 
-type Icon = {
+type IconData = {
   offset: number
   name: string
   className: string[] | string
@@ -27,7 +27,7 @@ const emit = defineEmits<{
   (e: 'operation', offset: number): void
 }>()
 
-const icons = computed<Array<Icon>>(() => {
+const icons = computed<Array<IconData>>(() => {
   const disabledClassName = ['opacity-50', 'cursor-not-allowed']
 
   return [

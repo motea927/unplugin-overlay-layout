@@ -72,9 +72,6 @@ importers:
       vite:
         specifier: ^5.0.4
         version: 5.0.4(@types/node@20.10.3)
-      vite-plugin-vue-devtools:
-        specifier: ^7.0.7
-        version: 7.0.7(@nuxt/kit@3.8.2)(rollup@4.6.1)(vite@5.0.4)
       vitest:
         specifier: ^0.34.6
         version: 0.34.6
@@ -1769,27 +1766,6 @@ packages:
       vite-dev-rpc: 0.1.4(vite@5.0.11)
       vite-hot-client: 0.2.3(vite@5.0.11)
       vite-plugin-inspect: 0.8.1(@nuxt/kit@3.8.2)(rollup@4.6.1)(vite@5.0.11)
-    transitivePeerDependencies:
-      - '@nuxt/kit'
-      - rollup
-      - supports-color
-      - vite
-    dev: true
-
-  /@vue/devtools-core@7.0.7(@nuxt/kit@3.8.2)(rollup@4.6.1)(vite@5.0.4):
-    resolution: {integrity: sha512-0QPg1GwweTIjcchJTDkchdR4pHl235eDmUpxJx57qCJMj2XikKzKEJvzNNAgABtWAiUNdW2trOSCkyQpPB8CTQ==}
-    dependencies:
-      '@vue/devtools-kit': 7.0.7
-      '@vue/devtools-schema': 7.0.7
-      '@vue/devtools-shared': 7.0.7
-      birpc: 0.2.14
-      fast-glob: 3.3.2
-      image-meta: 0.2.0
-      mitt: 3.0.1
-      pathe: 1.1.1
-      vite-dev-rpc: 0.1.4(vite@5.0.4)
-      vite-hot-client: 0.2.3(vite@5.0.4)
-      vite-plugin-inspect: 0.8.1(@nuxt/kit@3.8.2)(rollup@4.6.1)(vite@5.0.4)
     transitivePeerDependencies:
       - '@nuxt/kit'
       - rollup
@@ -5017,30 +4993,12 @@ packages:
       vite-hot-client: 0.2.3(vite@5.0.11)
     dev: true
 
-  /vite-dev-rpc@0.1.4(vite@5.0.4):
-    resolution: {integrity: sha512-6I/qF7EDGLQfm3DGdcbkZ7JRl3FIbaVgD1TqDWBaCosJ1QljLzNzDBmMEa7cYkEyAMxHDBqT7zJrOiuYlFYcAA==}
-    peerDependencies:
-      vite: ^2.9.0 || ^3.0.0-0 || ^4.0.0-0 || ^5.0.0-0
-    dependencies:
-      birpc: 0.2.14
-      vite: 5.0.4(@types/node@20.10.3)
-      vite-hot-client: 0.2.3(vite@5.0.4)
-    dev: true
-
   /vite-hot-client@0.2.3(vite@5.0.11):
     resolution: {integrity: sha512-rOGAV7rUlUHX89fP2p2v0A2WWvV3QMX2UYq0fRqsWSvFvev4atHWqjwGoKaZT1VTKyLGk533ecu3eyd0o59CAg==}
     peerDependencies:
       vite: ^2.6.0 || ^3.0.0 || ^4.0.0 || ^5.0.0-0
     dependencies:
       vite: 5.0.11(@types/node@18.19.6)
-    dev: true
-
-  /vite-hot-client@0.2.3(vite@5.0.4):
-    resolution: {integrity: sha512-rOGAV7rUlUHX89fP2p2v0A2WWvV3QMX2UYq0fRqsWSvFvev4atHWqjwGoKaZT1VTKyLGk533ecu3eyd0o59CAg==}
-    peerDependencies:
-      vite: ^2.6.0 || ^3.0.0 || ^4.0.0 || ^5.0.0-0
-    dependencies:
-      vite: 5.0.4(@types/node@20.10.3)
     dev: true
 
   /vite-node@0.34.6(@types/node@20.10.3):
@@ -5136,27 +5094,6 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-vue-devtools@7.0.7(@nuxt/kit@3.8.2)(rollup@4.6.1)(vite@5.0.4):
-    resolution: {integrity: sha512-kRTfQA1h6z0rA+MrnprLClvnUCCT/UQc8soWwRX7gIyfPKAer+GpZuY0y91teKdtGp+q25gk8NJvm/zYScEV5Q==}
-    engines: {node: '>=v14.21.3'}
-    peerDependencies:
-      vite: ^3.1.0 || ^4.0.0-0 || ^5.0.0-0
-    dependencies:
-      '@vue/devtools-core': 7.0.7(@nuxt/kit@3.8.2)(rollup@4.6.1)(vite@5.0.4)
-      '@vue/devtools-kit': 7.0.7
-      '@vue/devtools-shared': 7.0.7
-      birpc: 0.2.14
-      execa: 8.0.1
-      sirv: 2.0.4
-      vite: 5.0.4(@types/node@20.10.3)
-      vite-plugin-inspect: 0.8.1(@nuxt/kit@3.8.2)(rollup@4.6.1)(vite@5.0.4)
-      vite-plugin-vue-inspector: 4.0.2(vite@5.0.4)
-    transitivePeerDependencies:
-      - '@nuxt/kit'
-      - rollup
-      - supports-color
-    dev: true
-
   /vite-plugin-vue-inspector@4.0.2(vite@5.0.11):
     resolution: {integrity: sha512-KPvLEuafPG13T7JJuQbSm5PwSxKFnVS965+MP1we2xGw9BPkkc/+LPix5MMWenpKWqtjr0ws8THrR+KuoDC8hg==}
     peerDependencies:
@@ -5172,25 +5109,6 @@ packages:
       kolorist: 1.8.0
       magic-string: 0.30.5
       vite: 5.0.11(@types/node@18.19.6)
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
-  /vite-plugin-vue-inspector@4.0.2(vite@5.0.4):
-    resolution: {integrity: sha512-KPvLEuafPG13T7JJuQbSm5PwSxKFnVS965+MP1we2xGw9BPkkc/+LPix5MMWenpKWqtjr0ws8THrR+KuoDC8hg==}
-    peerDependencies:
-      vite: ^3.0.0-0 || ^4.0.0-0 || ^5.0.0-0
-    dependencies:
-      '@babel/core': 7.23.7
-      '@babel/plugin-proposal-decorators': 7.23.7(@babel/core@7.23.7)
-      '@babel/plugin-syntax-import-attributes': 7.23.3(@babel/core@7.23.7)
-      '@babel/plugin-syntax-import-meta': 7.10.4(@babel/core@7.23.7)
-      '@babel/plugin-transform-typescript': 7.23.6(@babel/core@7.23.7)
-      '@vue/babel-plugin-jsx': 1.1.5(@babel/core@7.23.7)
-      '@vue/compiler-dom': 3.4.8
-      kolorist: 1.8.0
-      magic-string: 0.30.5
-      vite: 5.0.4(@types/node@20.10.3)
     transitivePeerDependencies:
       - supports-color
     dev: true

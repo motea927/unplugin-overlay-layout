@@ -14,7 +14,7 @@ const emit = defineEmits<{
   (e: 'uploadImage', base64: string): void
 }>()
 
-const { data, file, open } = useFileSystemAccess()
+const { file, open } = useFileSystemAccess()
 
 const transformFileToBase64 = (file: File) =>
   new Promise((resolve, reject) => {
