@@ -6,12 +6,14 @@
         :is="icon"
         class="p-2"
         :is-open="state.isOpen"
+        :is-draggable="state.isDraggable"
         @click-eye="state.isOpen = !state.isOpen"
+        @click-drag="state.isDraggable = !state.isDraggable"
       />
     </div>
 
     <Teleport to="body">
-      <LayoutPreview v-if="state.isOpen" class="fixed inset-0 z-[990]" />
+      <LayoutPreview v-show="state.isOpen" :is-draggable="state.isDraggable" />
     </Teleport>
   </main>
 </template>
@@ -21,15 +23,17 @@ import { useStorage } from '@vueuse/core'
 
 import IconEye from '@/components/icons/IconEye.vue'
 import IconSetting from '@/components/icons/IconSetting.vue'
+import IconDraggable from '@/components/icons/IconDraggable.vue'
 
 import LayoutPreview from '@/components/LayoutPreview.vue'
 
-const icons = [IconEye, IconSetting]
+const icons = [IconEye, IconDraggable, IconSetting]
 
 const state = useStorage(
   'unplugin-overlay-layout',
   {
     isOpen: true,
+    isDraggable: false,
     layoutPreview: {
       style: ''
     }
