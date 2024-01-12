@@ -83,15 +83,13 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup",
     "build:popup": "npm -C popup run build",
-    "dev": "npm -C popup run dev & tsup --watch src",
+    "build:plugin": "tsup",
     "build:fix": "esno scripts/postbuild.ts",
+    "build:all": "npm run build:popup && npm run build:plugin",
+    "dev:playground": "npm -C popup run dev & npm -C playground run dev",
     "lint": "eslint .",
-    "play": "npm -C popup run dev & npm -C playground run dev",
-    "prepublishOnly": "npm run build",
     "release": "bumpp && npm publish",
-    "start": "esno src/index.ts",
     "test": "vitest"
   },
   "peerDependencies": {
