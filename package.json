@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0-beta.3",
   "packageManager": "pnpm@8.6.12",
-  "description": "",
+  "description": "Transform your development workflow with an immersive layout design experience! This Vite plugin revolutionizes your process by seamlessly overlaying different layout images onto your webpage, providing an instant and dynamic preview for efficient design slicing.",
   "license": "MIT",
   "homepage": "https://github.com/motea927/unplugin-overlay-layout",
   "repository": {
