@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite'
 
-import Unplugin from '../src/vite'
+import OverlayLayout from '../src/vite'
 
 export default defineConfig({
   plugins: [
-    Unplugin({
+    OverlayLayout({
       layoutPreview: {
         style: {
           position: 'absolute',

@@ -89,7 +89,7 @@
     "build:all": "npm run build:popup && npm run build:plugin",
     "dev:playground": "npm -C popup run dev & npm -C playground run dev",
     "lint": "eslint .  --config .eslintrc.cjs",
-    "release": "bumpp && npm publish",
+    "release": "npm run build:all && bumpp && npm publish",
     "test": "vitest"
   },
   "peerDependencies": {

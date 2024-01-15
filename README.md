@@ -1,28 +1,29 @@
 # unplugin-overlay-layout
 
-[![NPM version](https://img.shields.io/npm/v/unplugin-overlay-layout?color=a1b858&label=)](https://www.npmjs.com/package/unplugin-overlay-layout)
+Transform your development workflow with an immersive layout design experience! This Vite plugin revolutionizes your process by seamlessly overlaying different layout images onto your webpage, providing an instant and dynamic preview for efficient design slicing.
 
-Starter template for [unplugin](https://github.com/unjs/unplugin).
+## 💪 Motivation
 
-## Template Usage
+In modern web design, static layout images (`jpg` or `png`) occasionally present a challenge. While CSS overlays are a common solution, they can be cumbersome. Our motivation for creating this plugin is to provide a non-intrusive, development-focused alternative. Unlike permanent CSS overlays, our tool operates solely during development, allowing seamless layout image integration onto your webpage. Enjoy efficient design slicing without compromising your project's styles. Elevate your development experience with this Vite Plugin!
 
-To use this template, clone it down using:
+🚀 Features
 
-```bash
-npx degit unplugin/unplugin-overlay-layout my-unplugin
-```
-
-And do a global replacement of `unplugin-overlay-layout` with your plugin name.
-
-Then you can start developing your unplugin 🔥
-
-To test your plugin, run: `pnpm run dev`
-To release a new version, run: `pnpm run release`
+- ⚡ Non-Intrusive: Functions exclusively during development and does not get bundled into the project.
+- 🎨 Live Overlay for Effortless Design Slicing: Easily overlay different layout images onto your webpage using a floating panel for a real-time preview and simplified design slicing.
+- 🚀 Perfect for Traditional Workflows: Ideal for older design approaches with a single layout image, eliminating the need for constant switching or refreshing. Instantly view the final layout overlaid on your browser.
+- 🛠 Integrated with Vite: Seamlessly integrates into your Vite development workflow with minimal configuration overhead.
 
 ## Install
 
 ```bash
-npm i unplugin-overlay-layout
+# npm
+npm i -D unplugin-overlay-layout
+
+# yarn
+yarn add -D unplugin-overlay-layout
+
+# pnpm
+pnpm add -D unplugin-overlay-layout
 ```
 
 <details>
@@ -30,12 +31,22 @@ npm i unplugin-overlay-layout
 
 ```ts
 // vite.config.ts
-import Starter from 'unplugin-overlay-layout/vite'
+import OverlayLayout from 'unplugin-overlay-layout/vite'
 
 export default defineConfig({
   plugins: [
-    Starter({
+    OverlayLayout({
       /* options */
+      layoutPreview: {
+        style: {
+          position: 'absolute',
+          margin: 'auto',
+          inset: '0',
+          width: '13.34rem',
+          height: '7.5rem'
+        },
+        imageUrl: 'https://picsum.photos/200/300'
+      }
     })
   ]
 })
@@ -45,91 +56,16 @@ Example: [`playground/`](./playground/)
 
 <br></details>
 
-<details>
-<summary>Rollup</summary><br>
+## Configuration
+
+Options: [`Options/`](./src/types.ts)
 
 ```ts
-// rollup.config.js
-import Starter from 'unplugin-overlay-layout/rollup'
-
-export default {
-  plugins: [
-    Starter({
-      /* options */
-    })
-  ]
-}
-```
-
-<br></details>
-
-<details>
-<summary>Webpack</summary><br>
-
-```ts
-// webpack.config.js
-module.exports = {
-  /* ... */
-  plugins: [
-    require('unplugin-overlay-layout/webpack')({
-      /* options */
-    })
-  ]
-}
-```
-
-<br></details>
-
-<details>
-<summary>Nuxt</summary><br>
-
-```ts
-// nuxt.config.js
-export default defineNuxtConfig({
-  modules: [
-    [
-      'unplugin-overlay-layout/nuxt',
-      {
-        /* options */
-      }
-    ]
-  ]
-})
-```
-
-> This module works for both Nuxt 2 and [Nuxt Vite](https://github.com/nuxt/vite)
-
-<br></details>
-
-<details>
-<summary>Vue CLI</summary><br>
-
-```ts
-// vue.config.js
-module.exports = {
-  configureWebpack: {
-    plugins: [
-      require('unplugin-overlay-layout/webpack')({
-        /* options */
-      })
-    ]
+OverlayLayout({
+  layoutPreview?: {
+    style: '',
+    imageUrl: ''
+    opacity: 50
   }
-}
-```
-
-<br></details>
-
-<details>
-<summary>esbuild</summary><br>
-
-```ts
-// esbuild.config.js
-import { build } from 'esbuild'
-import Starter from 'unplugin-overlay-layout/esbuild'
-
-build({
-  plugins: [Starter()]
 })
 ```
-
-<br></details>
