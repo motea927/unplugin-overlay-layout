@@ -6,9 +6,9 @@ import sirv from 'sirv'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-export const unpluginFactory: UnpluginFactory<
-  Options | undefined
-> = options => {
+export const unpluginFactory: UnpluginFactory<Options | undefined> = (
+  options
+) => {
   return {
     name: 'unplugin-overlay-layout',
     enforce: 'pre',
