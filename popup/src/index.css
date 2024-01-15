@@ -5,9 +5,9 @@
 @layer components {
   .icon-container {
     @apply flex flex-col items-center justify-center gap-1 p-2;
+  }
 
-    svg {
-      @apply w-4 h-4;
-    }
+  .icon-container svg {
+    @apply w-4 h-4;
   }
 }
