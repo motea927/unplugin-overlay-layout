@@ -2,7 +2,7 @@
 
 Transform your development workflow with an immersive layout design experience! This Vite plugin revolutionizes your process by seamlessly overlaying different layout images onto your webpage, providing an instant and dynamic preview for efficient design slicing.
 
-![image](https://raw.githubusercontent.com/motea927/mt-v-safe-html/master/assets/demo.gif)
+![image](https://raw.githubusercontent.com/motea927/unplugin-overlay-layout/master/assets/demo.gif)
 
 ## 💪 Motivation
 
