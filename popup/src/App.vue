@@ -1,6 +1,6 @@
 <template>
   <main class="fixed right-2 top-1/2 transform -translate-y-1/2 z-[999]">
-    <div class="flex flex-col p-2 divide-y shadow-xl rounded-xl">
+    <div class="flex flex-col p-2 bg-white divide-y shadow-xl rounded-[12px]">
       <IconEye :isOpen="state.isOpen" @click-eye="state.isOpen = !state.isOpen" />
 
       <IconDraggable

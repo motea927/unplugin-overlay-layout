@@ -6,7 +6,7 @@
     :class="icon.className"
   >
     <Icon :icon="icon.name" />
-    <p v-if="icon.offset > 0" class="text-xs">{{ props.opacity }} %</p>
+    <p v-if="icon.offset > 0" class="text-[12px]">{{ props.opacity }} %</p>
   </IconContainer>
 </template>
 

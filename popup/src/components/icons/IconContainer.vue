@@ -1,5 +1,5 @@
 <template>
-  <button class="flex flex-col items-center justify-center gap-1 p-2">
+  <button class="icon-container">
     <slot />
   </button>
 </template>
