@@ -20,7 +20,7 @@ const defaultStyle = computed<StyleValue>(() => {
   }
 })
 
-const userStyle = window._unpluginOverlayLayout.layoutPreview?.style || {}
+const userStyle = window._unpluginOverlayLayout?.layoutPreview?.style || {}
 
 const el = ref<HTMLElement | null>(null)
 const { style: dragStyle } = useDraggable(el)
