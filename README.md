@@ -10,10 +10,10 @@ In modern web design, static layout images (`jpg` or `png`) occasionally present
 
 ## 🚀 Features
 
-- ⚡ Non-Intrusive: Functions exclusively during development and does not get bundled into the project.
-- 🎨 Live Overlay for Effortless Design Slicing: Easily overlay different layout images onto your webpage using a floating panel for a real-time preview and simplified design slicing.
-- 🚅 Perfect for Traditional Workflows: Ideal for older design approaches with a single layout image, eliminating the need for constant switching or refreshing. Instantly view the final layout overlaid on your browser.
-- 🛠 Integrated with Vite: Seamlessly integrates into your Vite development workflow with minimal configuration overhead.
+- ⚡ **Non-Intrusive**: Functions exclusively during development and does not get bundled into the project.
+- 🎨 **Live Overlay for Effortless Design Slicing**: Easily overlay different layout images onto your webpage using a floating panel for a real-time preview and simplified design slicing.
+- 🚅 **Perfect for Traditional Workflows**: Ideal for older design approaches with a single layout image, eliminating the need for constant switching or refreshing. Instantly view the final layout overlaid on your browser.
+- 🛠 **Integrated with Vite**: Seamlessly integrates into your Vite development workflow with minimal configuration overhead.
 
 ## Install
 
