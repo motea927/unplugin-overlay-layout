@@ -90,7 +90,8 @@
     "dev:playground": "npm -C popup run dev & npm -C playground run dev",
     "lint": "eslint .  --config .eslintrc.cjs",
     "release": "npm run build:all && bumpp && npm publish",
-    "test": "vitest"
+    "test": "vitest",
+    "prepare": "husky install"
   },
   "peerDependencies": {
     "@nuxt/kit": "^3",
@@ -126,6 +127,8 @@
     "unplugin": "^1.5.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^18.4.4",
+    "@commitlint/config-conventional": "^18.4.4",
     "@iconify/vue": "^4.1.1",
     "@nuxt/kit": "^3.8.2",
     "@nuxt/schema": "^3.8.2",
@@ -137,6 +140,7 @@
     "esno": "^4.0.0",
     "fast-glob": "^3.3.2",
     "fs-extra": "^11.2.0",
+    "husky": "^8.0.3",
     "nodemon": "^3.0.2",
     "rimraf": "^5.0.5",
     "rollup": "^4.6.1",
