@@ -88,6 +88,7 @@
     "build:fix": "esno scripts/postbuild.ts",
     "build:all": "npm run build:popup && npm run build:plugin && cp -r src/overlay-layout dist",
     "dev:playground": "npm -C popup run dev & npm -C playground run dev",
+    "lint": "eslint .  --config .eslintrc.cjs",
     "lint:fix": "eslint .  --config .eslintrc.cjs && prettier --write -c .",
     "release": "npm run build:all && bumpp && npm publish",
     "test": "vitest",
