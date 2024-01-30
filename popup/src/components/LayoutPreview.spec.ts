@@ -10,7 +10,8 @@ const mountElement = (props?: { isDraggable?: boolean; imageUrl?: string; opacit
   const defaultProps = {
     isDraggable: true,
     imageUrl: '',
-    opacity: 100
+    opacity: 100,
+    userStyle: ''
   }
   return shallowMount(LayoutPreview, {
     props: {
