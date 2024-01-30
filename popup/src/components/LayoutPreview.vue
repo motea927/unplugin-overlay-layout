@@ -11,6 +11,7 @@ const props = defineProps<{
   isDraggable: boolean
   imageUrl: string
   opacity: number
+  userStyle: StyleValue
 }>()
 
 const defaultStyle = computed<StyleValue>(() => {
@@ -19,8 +20,6 @@ const defaultStyle = computed<StyleValue>(() => {
     backgroundImage: `url(${props.imageUrl})`
   }
 })
-
-const userStyle = window._unpluginOverlayLayout?.layoutPreview?.style || {}
 
 const el = ref<HTMLElement | null>(null)
 const { style: dragStyle } = useDraggable(el)
@@ -45,6 +44,6 @@ const controlStyle = computed<StyleValue[]>(() => {
 })
 
 const mergedStyle = computed<StyleValue>(() => {
-  return [defaultStyle.value, userStyle, ...controlStyle.value]
+  return [defaultStyle.value, props.userStyle, ...controlStyle.value]
 })
 </script>

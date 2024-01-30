@@ -6,11 +6,17 @@ beforeEach(() => {
   window._unpluginOverlayLayout = {}
 })
 
-const mountElement = (props?: { isDraggable?: boolean; imageUrl?: string; opacity?: number }) => {
+const mountElement = (props?: {
+  isDraggable?: boolean
+  imageUrl?: string
+  opacity?: number
+  userStyle?: string
+}) => {
   const defaultProps = {
     isDraggable: true,
     imageUrl: '',
-    opacity: 100
+    opacity: 100,
+    userStyle: ''
   }
   return shallowMount(LayoutPreview, {
     props: {
@@ -22,15 +28,12 @@ const mountElement = (props?: { isDraggable?: boolean; imageUrl?: string; opacit
 
 describe('LayoutPreview.vue', () => {
   it('global style config can work', () => {
-    const style = 'width: 20px'
-    window._unpluginOverlayLayout = {
-      layoutPreview: {
-        style
-      }
-    }
+    const userStyle = 'width: 20px'
 
-    const wrapper = mountElement()
-    expect(wrapper.attributes('style')).toContain(style)
+    const wrapper = mountElement({
+      userStyle
+    })
+    expect(wrapper.attributes('style')).toContain(userStyle)
   })
 
   it('computes the style correctly', () => {

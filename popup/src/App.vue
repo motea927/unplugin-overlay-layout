@@ -21,6 +21,7 @@
         :is-draggable="state.isDraggable"
         :image-url="state.layoutPreview.imageUrl"
         :opacity="state.layoutPreview.opacity"
+        :user-style="state.layoutPreview.style"
       />
     </Teleport>
   </main>
@@ -28,27 +29,44 @@
 
 <script setup lang="ts">
 import { useStorage } from '@vueuse/core'
+import { onMounted } from 'vue'
 
 import IconEye from '@/components/icons/IconEye.vue'
 import IconDraggable from '@/components/icons/IconDraggable.vue'
 import IconImageUpload from '@/components/icons/IconImageUpload.vue'
 import IconOpacity from '@/components/icons/IconOpacity.vue'
-
 import LayoutPreview from '@/components/LayoutPreview.vue'
+
+import { deepEqual } from '@/utils'
+
+const getDefaultLayoutPreview = () => {
+  return {
+    style: window._unpluginOverlayLayout.layoutPreview?.style || '',
+    imageUrl: window._unpluginOverlayLayout.layoutPreview?.imageUrl || '',
+    opacity: window._unpluginOverlayLayout.layoutPreview?.opacity || 50
+  }
+}
 
 const state = useStorage(
   'unplugin-overlay-layout',
   {
+    cache: window._unpluginOverlayLayout,
     isOpen: true,
     isDraggable: false,
-    layoutPreview: {
-      style: '',
-      imageUrl: window._unpluginOverlayLayout.layoutPreview?.imageUrl || '',
-      opacity: window._unpluginOverlayLayout.layoutPreview?.opacity || 50
-    }
+    layoutPreview: getDefaultLayoutPreview()
   },
-  sessionStorage
+  sessionStorage,
+  { mergeDefaults: true }
 )
+
+onMounted(() => {
+  const isEqual = deepEqual(state.value.cache, window._unpluginOverlayLayout)
+  if (isEqual) return
+
+  // force update
+  state.value.cache = window._unpluginOverlayLayout
+  state.value.layoutPreview = getDefaultLayoutPreview()
+})
 
 const handleClickOperation = (offset: number) => {
   if (offset > 0) {
@@ -58,3 +76,4 @@ const handleClickOperation = (offset: number) => {
   }
 }
 </script>
+./utils
