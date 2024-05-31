@@ -1,12 +1,8 @@
-import { defineNuxtModule, createResolver, addServerHandler } from '@nuxt/kit'
-import type { ViteDevServer } from 'vite'
+import { defineNuxtModule } from '@nuxt/kit'
 
 import type { Options } from './types'
 import '@nuxt/schema'
-import sirv from 'sirv'
 import viteDevServer from './viteDevServer'
-import { resolve, dirname } from 'node:path'
-import { fileURLToPath } from 'node:url'
 
 export interface ModuleOptions extends Options {}
 
