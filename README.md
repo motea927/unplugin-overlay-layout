@@ -54,9 +54,36 @@ export default defineConfig({
 })
 ```
 
-Example: [`playground/`](./playground/)
-
 <br></details>
+
+<details>
+<summary>Nuxt</summary><br>
+
+```ts
+// nuxt.config.ts
+export default defineNuxtConfig({
+  modules: [
+    [
+      'unplugin-overlay-layout/nuxt',
+      {
+        layoutPreview: {
+          style: {
+            position: 'absolute',
+            margin: 'auto',
+            inset: '0',
+            width: '13.34rem',
+            height: '7.5rem'
+          },
+          imageUrl: 'https://picsum.photos/200/300'
+        }
+      }
+    ]
+  ]
+})
+
+```
+<br></details>
+
 
 ## Configuration
 
