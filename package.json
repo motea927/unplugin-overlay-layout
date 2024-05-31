@@ -87,7 +87,8 @@
     "build:plugin": "tsup",
     "build:fix": "esno scripts/postbuild.ts",
     "build:all": "npm run build:popup && npm run build:plugin && cp -r src/overlay-layout dist",
-    "dev:playground": "npm -C popup run dev & npm -C playground run dev",
+    "dev:vite": "npm -C popup run dev & npm -C playground/vite run dev",
+    "dev:nuxt3": "npm -C popup run dev & npm -C playground/nuxt3 run dev",
     "lint": "eslint .  --config .eslintrc.cjs",
     "lint:fix": "eslint .  --config .eslintrc.cjs && prettier --write -c .",
     "release": "npm run build:all && bumpp && npm publish",
@@ -123,7 +124,7 @@
     }
   },
   "dependencies": {
-    "@vueuse/core": "^10.7.2",
+    "@vueuse/core": "^10.9.0",
     "sirv": "^2.0.4",
     "unplugin": "^1.6.0"
   },
@@ -154,5 +155,8 @@
     "vite": "^5.0.5",
     "vitest": "^0.34.6",
     "webpack": "^5.89.0"
+  },
+  "resolutions": {
+    "ufo": "^1.5.3"
   }
 }

@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 
-import OverlayLayout from '../src/vite'
+import OverlayLayout from '../../src/vite'
 
 export default defineConfig({
   plugins: [
