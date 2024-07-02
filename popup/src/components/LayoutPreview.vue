@@ -1,5 +1,5 @@
 <template>
-  <div ref="el" :style="mergedStyle" class="z-[990] bg-no-repeat bg-center"></div>
+  <div ref="el" :style="mergedStyle" class="z-[990] bg-no-repeat bg-center touch-none"></div>
 </template>
 
 <script setup lang="ts">
