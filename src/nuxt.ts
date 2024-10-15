@@ -47,9 +47,5 @@ export default defineNuxtModule<ModuleOptions>({
         }
       ]
     )
-
-    nuxt.options.app.head.link.push(
-      ...[{ rel: 'stylesheet', href: '/__OVERLAY_LAYOUT__/overlay-layout.css' }]
-    )
   }
 })
