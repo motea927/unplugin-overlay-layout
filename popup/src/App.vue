@@ -76,4 +76,3 @@ const handleClickOperation = (offset: number) => {
   }
 }
 </script>
-./utils

@@ -32,14 +32,6 @@ export const unpluginFactory: UnpluginFactory<Options | undefined> = (
               type: 'module',
               src: '/__OVERLAY_LAYOUT__/overlay-layout.js'
             }
-          },
-          {
-            tag: 'link',
-            injectTo: 'head',
-            attrs: {
-              rel: 'stylesheet',
-              href: '/__OVERLAY_LAYOUT__/overlay-layout.css'
-            }
           }
         ]
       }
