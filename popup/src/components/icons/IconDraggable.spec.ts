@@ -24,7 +24,7 @@ describe('IconDraggable.vue', () => {
 
     const icon = wrapper.findComponent(Icon)
 
-    expect(icon.classes()).toContain('text-green-600')
+    expect(icon.classes()).toContain('text-green-900')
     expect(icon.classes()).not.toContain('opacity-20')
   })
 
@@ -34,7 +34,7 @@ describe('IconDraggable.vue', () => {
     })
     const icon = wrapper.findComponent(Icon)
     expect(icon.classes()).toContain('opacity-20')
-    expect(icon.classes()).not.toContain('text-green-600')
+    expect(icon.classes()).not.toContain('text-green-900')
   })
 
   it('emits the clickDrag event when clicked', async () => {

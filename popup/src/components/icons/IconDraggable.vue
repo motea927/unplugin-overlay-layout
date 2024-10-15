@@ -2,7 +2,7 @@
   <IconContainer @click="emit('clickDrag')">
     <Icon
       :icon="`fluent:drag-20-regular`"
-      :class="[props.isDraggable ? 'text-green-600' : 'opacity-20']"
+      :class="[props.isDraggable ? 'text-green-900' : 'opacity-20']"
     />
   </IconContainer>
 </template>
