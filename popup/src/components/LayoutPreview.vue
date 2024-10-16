@@ -1,5 +1,5 @@
 <template>
-  <div ref="el" :style="mergedStyle" class="z-[990] bg-no-repeat bg-center touch-none"></div>
+  <div ref="el" :style="mergedStyle"></div>
 </template>
 
 <script setup lang="ts">
@@ -17,7 +17,11 @@ const props = defineProps<{
 const defaultStyle = computed<StyleValue>(() => {
   return {
     backgroundSize: '100% auto',
-    backgroundImage: `url(${props.imageUrl})`
+    backgroundImage: `url(${props.imageUrl})`,
+    zIndex: 990,
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    touchAction: 'none'
   }
 })
 
